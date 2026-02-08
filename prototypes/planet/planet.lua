@@ -78,8 +78,8 @@ PlanetsLib:extend{{
       },
       sprite = {
         type = "sprite",
-        filename = "__apia__/graphics/icons/apia.png",
-        size = 64,
+        filename = "__apia__/graphics/icons/orbit.png",
+        size = 380,
         scale = 0.25,
       }
     },

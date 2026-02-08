@@ -137,7 +137,7 @@ data:extend(
     type = "technology",
     name = "honey-processing",
     icon = "__apia__/graphics/technology/honey-processing.png",
-    icon_size = 64,
+    icon_size = 128,
     effects =
     {
       {
@@ -256,7 +256,7 @@ data:extend(
     prerequisites = {"apicultural-science-pack", "defender", "flamethrower"},
     unit =
     {
-      count = 2000,
+      count = 500,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -283,7 +283,7 @@ data:extend(
     prerequisites = {"apicultural-science-pack", "solar-energy"},
     unit =
     {
-      count = 3000,
+      count = 300,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -311,7 +311,7 @@ data:extend(
     prerequisites = {"apicultural-science-pack"},
     unit =
     {
-      count = 6000,
+      count = 1000,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -339,7 +339,7 @@ data:extend(
     prerequisites = {"apicultural-science-pack", "artillery"},
     unit =
     {
-      count = 3000,
+      count = 300,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -431,7 +431,17 @@ data:extend(
       },
 	  {
         type = "change-recipe-productivity",
+        recipe = "advanced-thruster-oxidizer",
+        change = 0.1
+      },
+	  {
+        type = "change-recipe-productivity",
         recipe = "thruster-fuel",
+        change = 0.1
+      },
+	  {
+        type = "change-recipe-productivity",
+        recipe = "advanced-thruster-fuel",
         change = 0.1
       },
     },

@@ -1,9 +1,9 @@
 {
   "name": "apia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "Apia",
-  "author": "Cybranian",
-  "description": "TODO",
+  "author": "Cybranian (DimonSever000)",
+  "description": "A moon of Gleba with a dense and viscous atmosphere. Its surface consists of numerous small islands drifting in oceans of nutrient-rich royal jelly. Fauna is represented by a symbiosis of honey-bearing insects and invertebrate larvae.",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0.50",

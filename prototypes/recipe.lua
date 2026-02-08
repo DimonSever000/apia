@@ -44,7 +44,7 @@ data:extend(
     type = "recipe",
     name = "nutrients-from-larvae",
     icon = "__apia__/graphics/icons/nutrients-from-larvae.png",
-    category = "apicultural-or-assembling",
+    category = "apicultural-or-hand-crafting",
     subgroup = "apiculture-processes",
     order = "d-a[nutrients-from-larvae]",
 	auto_recycle = false,
@@ -70,7 +70,7 @@ data:extend(
     {
 		{type = "item", name = "stone", amount = 1, probability = 0.33},
 		{type = "item", name = "iron-ore", amount = 1, probability = 0.15},
-		{type = "item", name = "copper-ore", amount = 1, probability = 0.15},
+		{type = "item", name = "copper-ore", amount = 1, probability = 0.10},
 		{type = "item", name = "phosphorus", amount = 1, probability = 0.02},
     },
   },

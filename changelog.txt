@@ -3,3 +3,15 @@ Version: 0.0.1
 Date: 31-01-2026
 - Released
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 02-02-2026
+- Added wax platform title translation
+- Changed honey processing technology texture
+- The larva fuel value rise from 1MJ to 2MJ
+- The larva spoils in 5 minutes instead of 10
+- The recipe for creating nutrients from larvae can now be completed in hand
+- The thruster's productivity technology now extends to the advanced recipe
+- Orbit draw fixes
+- Fossils now have a 10% chance to drop copper ore instead of 15%
+- Technologies cost changed
+---------------------------------------------------------------------------------------------------
