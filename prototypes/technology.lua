@@ -1,11 +1,11 @@
-
+local apia_utils = require("lib")
 
 
 data:extend(
 {
   {
     type = "technology",
-    name = "planet-discovery-apia",
+    name = "planet-discovery-apia-carnova",
     icons = util.technology_icon_constant_planet("__apia__/graphics/technology/apia.png"),
     icon_size = 256,
     essential = true,
@@ -13,11 +13,21 @@ data:extend(
     {
       {
         type = "unlock-space-location",
+        space_location = "apia-carnova-orbit",
+        use_icon_overlay_constant = true
+      },
+	  {
+        type = "unlock-space-location",
         space_location = "apia",
         use_icon_overlay_constant = true
       },
+	  {
+        type = "unlock-space-location",
+        space_location = "carnova",
+        use_icon_overlay_constant = true
+      },
     },
-    prerequisites = {"agricultural-science-pack", "electromagnetic-science-pack"},
+    prerequisites = {"agricultural-science-pack"},
     unit =
     {
       count = 1000,
@@ -28,7 +38,6 @@ data:extend(
         {"chemical-science-pack", 1},
         {"space-science-pack", 1},
 		{"agricultural-science-pack", 1},
-		{"electromagnetic-science-pack", 1},
       },
       time = 60
     }
@@ -44,20 +53,16 @@ data:extend(
         type = "unlock-recipe",
         recipe = "larvae-cultivation"
       },
-      {
-        type = "unlock-recipe",
-        recipe = "nutrients-from-larvae"
-      },
 	  {
         type = "unlock-recipe",
         recipe = "fossil-larvae-processing"
       },
 	  {
         type = "unlock-recipe",
-        recipe = "biosynthesizer"
+        recipe = "biosynthesizer-apia"
       }
     },
-    prerequisites = {"planet-discovery-apia"},
+    prerequisites = {"planet-discovery-apia-carnova"},
     research_trigger =
     {
       type = "mine-entity",
@@ -77,41 +82,26 @@ data:extend(
       },
 	  {
         type = "unlock-recipe",
-        recipe = "processing-unit-from-phosphoric-acid"
+        recipe = "rocket-fuel-from-phosphoric-acid"
       },
 	  {
         type = "unlock-recipe",
-        recipe = "explosives-from-phosphorus"
+        recipe = "processing-unit-from-phosphoric-acid"
       },
 	  {
         type = "unlock-recipe",
         recipe = "flamethrower-ammo-from-phosphorus"
       },
-    },
-    prerequisites = {"parasites", "explosives"},
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "phosphorus",
-    }
-  },
-  {
-    type = "technology",
-    name = "phosphate-battery",
-    icon = "__apia__/graphics/technology/phosphate-battery.png",
-	icon_size = 256,
-    effects =
-    {
-      {
+	  {
         type = "unlock-recipe",
         recipe = "battery-from-phosphoric-acid"
       },
     },
-    prerequisites = {"phosphorus"},
+    prerequisites = {"planet-discovery-apia-carnova"},
     research_trigger =
     {
-      type = "craft-fluid",
-      fluid = "phosphoric-acid",
+      type = "craft-item",
+      item = "phosphorus",
     }
   },
   {
@@ -126,7 +116,7 @@ data:extend(
         recipe = "honeycombs-processing"
       },
     },
-    prerequisites = {"planet-discovery-apia"},
+    prerequisites = {"planet-discovery-apia-carnova"},
     research_trigger =
     {
       type = "mine-entity",
@@ -159,7 +149,11 @@ data:extend(
 	  {
         type = "unlock-recipe",
         recipe = "biolubricant-from-royal-jelly"
-      }
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "explosives-from-polysaccharides"
+      },
     },
     prerequisites = {"apiculture", "parasites"},
     research_trigger =
@@ -183,10 +177,6 @@ data:extend(
 	  {
         type = "unlock-recipe",
         recipe = "solid-fuel-from-polysaccharides"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "rocket-fuel-from-phosphoric-acid"
       },
 	  {
         type = "unlock-recipe",
@@ -234,7 +224,7 @@ data:extend(
         recipe = "apicultural-science-pack"
       },
     },
-    prerequisites = {"artificial-hive"},
+    prerequisites = {"artificial-hive", "roe-breeding", "nitroglycerine"},
     research_trigger =
     {
       type = "craft-item",
@@ -353,6 +343,265 @@ data:extend(
       },
       time = 60
     },
+  },
+  {
+    type = "technology",
+    name = "bones-processing",
+    icon = "__apia__/graphics/technology/bones-processing.png",
+    icon_size = 128,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "simple-bone-processing"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "advanced-bone-processing"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "bone-meal-smelting"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "bone-meal-sieving"
+      },
+    },
+    prerequisites = {"planet-discovery-apia-carnova"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "bone-nodes"
+    }
+  },
+  {
+    type = "technology",
+    name = "lymph-processing",
+    icon = "__apia__/graphics/technology/lymph-processing.png",
+    icon_size = 128,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "lymph-refining"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "blood-separation"
+      },
+    },
+    prerequisites = {"flesh-reproduction", "bones-processing"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "lymph-brine"
+    }
+  },
+  {
+    type = "technology",
+    name = "flesh-reproduction",
+    icon = "__apia__/graphics/technology/flesh-reproduction.png",
+    icon_size = 128,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "biosynthesizer-carnova"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "flesh-reproduction"
+      },
+    },
+    prerequisites = {"planet-discovery-apia-carnova"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "flesh-antenna"
+    }
+  },
+  {
+    type = "technology",
+    name = "roe-breeding",
+    icon = "__apia__/graphics/technology/roe-breeding.png",
+    icon_size = 256,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "roe-reproduction"
+      },
+    },
+    prerequisites = {"flesh-separation"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "proteins",
+	  count = 50,
+    }
+  },
+  {
+    type = "technology",
+    name = "flesh-separation",
+    icon = "__apia__/graphics/technology/flesh-separation.png",
+    icon_size = 128,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "flesh-separation"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "nutrients-from-lipids"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "nutrients-from-proteins"
+      },
+    },
+    prerequisites = {"lymph-processing"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "flesh",
+    }
+  },
+  {
+    type = "technology",
+    name = "nitroglycerine",
+    icon = "__apia__/graphics/technology/nitroglycerine.png",
+    icon_size = 128,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "glycerine"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "biolubricant-from-glycerine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "explosives-from-nitroglycerine"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "solid-fuel-from-glycerine"
+      },
+    },
+    prerequisites = {"flesh-separation", "phosphorus"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "lipids",
+    }
+  },
+  {
+    type = "technology",
+    name = "refreshment",
+    icon = "__apia__/graphics/technology/refreshment.png",
+    icon_size = 128,
+    effects = { },
+    prerequisites = {"apicultural-science-pack"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+		{"utility-science-pack", 1},
+        {"space-science-pack", 1},
+        {"agricultural-science-pack", 1},
+		{"apicultural-science-pack", 1},
+      },
+      time = 60
+    },
+  },
+  {
+    type = "technology",
+    name = "carbon-fiber-apia",
+    icon = "__apia__/graphics/technology/carbon-fiber-apia.png",
+    icon_size = 128,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "carbon-fiber-apia"
+      },
+    },
+    prerequisites = {"wax-processing", "honey-processing", "carbon-fiber"},
+	research_trigger =
+	{
+      type = "craft-item",
+      item = "polysaccharides",
+      count = 100
+    }
+  },
+  {
+    type = "technology",
+    name = "carbon-fiber-carnova",
+    icon = "__apia__/graphics/technology/carbon-fiber-carnova.png",
+    icon_size = 128,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "carbon-fiber-carnova"
+      },
+    },
+    prerequisites = {"flesh-separation", "carbon-fiber"},
+	research_trigger =
+	{
+      type = "craft-item",
+      item = "lipids",
+      count = 100
+    }
+  },
+  {
+    type = "technology",
+    name = "carbon-fiber-productivity",
+    icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/carbon-fiber-productivity.png"),
+    effects =
+    {
+	  {
+        type = "change-recipe-productivity",
+        recipe = "carbon-fiber",
+        change = 0.1
+      },
+	  {
+        type = "change-recipe-productivity",
+        recipe = "carbon-fiber-apia",
+        change = 0.1
+      },
+	  {
+        type = "change-recipe-productivity",
+        recipe = "carbon-fiber-carnova",
+        change = 0.1
+      },
+    },
+    prerequisites = {"apicultural-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+		{"production-science-pack", 1},
+        {"space-science-pack", 1},
+		{"agricultural-science-pack", 1},
+        {"apicultural-science-pack", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
   },
   {
     type = "technology",
@@ -487,7 +736,7 @@ data:extend(
 		{"production-science-pack", 1},
         {"space-science-pack", 1},
         {"agricultural-science-pack", 1},
-		{"apicultural-science-pack", 1}
+		{"apicultural-science-pack", 1},
       },
       time = 60
     },
@@ -515,6 +764,11 @@ data:extend(
         recipe = "biolubricant-from-royal-jelly",
         change = 0.1
       },
+	  {
+        type = "change-recipe-productivity",
+        recipe = "biolubricant-from-glycerine",
+        change = 0.1
+      },
     },
     prerequisites = {"apicultural-science-pack"},
     unit =
@@ -534,61 +788,100 @@ data:extend(
     max_level = "infinite",
     upgrade = true
   },
+  {
+    type = "technology",
+    name = "flesh-productivity",
+	icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/flesh-productivity.png"),
+    effects =
+    {
+      {
+        type = "change-recipe-productivity",
+        recipe = "flesh-separation",
+		change = 0.1
+      },
+    },
+    prerequisites = {"apicultural-science-pack"},
+    unit =
+    {
+      count_formula = "1.2^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"agricultural-science-pack", 1},
+        {"apicultural-science-pack", 1}
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
+  {
+    type = "technology",
+    name = "bone-productivity",
+	icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/bone-productivity.png"),
+    effects =
+    {
+	  {
+        type = "change-recipe-productivity",
+        recipe = "simple-bone-processing",
+		change = 0.1
+      },
+	  {
+        type = "change-recipe-productivity",
+        recipe = "advanced-bone-processing",
+		change = 0.1
+      },
+    },
+    prerequisites = {"apicultural-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+		{"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+		{"production-science-pack", 1},
+        {"agricultural-science-pack", 1},
+        {"apicultural-science-pack", 1}
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
 })
 
 
 
 
-local function add_tech_prerequisites(tech_name, prerequisites)
-  local tech = data.raw.technology[tech_name]
-  tech.prerequisites = tech.prerequisites or {}
-  for _, prereq in ipairs(tech.prerequisites) do
-    if prereq == prerequisites then
-      return
-    end
-  end
-  table.insert(tech.prerequisites, prerequisites)
-end
-
-
-local function add_science_pack(tech_name, science_pack)
-  local tech = data.raw.technology[tech_name]
-  -- If `tech.unit` doesn't exist then it is a trigger tech rather than a science tech, cannot modify it in this way
-  if tech.unit then
-    tech.unit.ingredients = tech.unit.ingredients or {}
-    table.insert(tech.unit.ingredients, science_pack)
-  else
-    log("Apia: Unable to add science to tech `" .. tech_name .. "` due to it being a trigger technology, skipped.")
-  end
-end
-
-local function add_tech_effect(tech_name, effect)
-  local tech = data.raw.technology[tech_name]
-  tech.effects = tech.effects or {}
-  table.insert(tech.effects, effect)
-end
-
 
 if settings.startup["apia-vanila-science"].value then
-add_tech_prerequisites("refined-flammables-7", "apicultural-science-pack")
-add_science_pack("refined-flammables-7", { "apicultural-science-pack", 1 })
-add_tech_prerequisites("overgrowth-soil", "apicultural-science-pack")
-add_science_pack("overgrowth-soil", { "apicultural-science-pack", 1 })
+	apia_utils.add_tech_prerequisites("refined-flammables-7", "apicultural-science-pack")
+	apia_utils.add_science_pack("refined-flammables-7", { "apicultural-science-pack", 1 })
+	apia_utils.add_tech_prerequisites("overgrowth-soil", "apicultural-science-pack")
+	apia_utils.add_science_pack("overgrowth-soil", { "apicultural-science-pack", 1 })
+	apia_utils.add_tech_prerequisites("stronger-explosives-7", "apicultural-science-pack")
+	apia_utils.add_science_pack("stronger-explosives-7", { "apicultural-science-pack", 1 })
 end
 
 if settings.startup["apia-science-promethium"].value then
-add_tech_prerequisites("promethium-science-pack", "apicultural-science-pack")
-add_science_pack("promethium-science-pack", { "apicultural-science-pack", 1 })
+	apia_utils.add_tech_prerequisites("promethium-science-pack", "apicultural-science-pack")
+	apia_utils.add_science_pack("promethium-science-pack", { "apicultural-science-pack", 1 })
 end
 
 if settings.startup["apia-science-research-productivity"].value then
-add_science_pack("research-productivity", { "apicultural-science-pack", 1 })
+	apia_utils.add_science_pack("research-productivity", { "apicultural-science-pack", 1 })
 end
 
-add_tech_effect("plastic-bar-productivity",
-  { type = "change-recipe-productivity", recipe = "bioplastic-from-wax", change = 0.1 })
-add_tech_effect("rocket-fuel-productivity",
-  { type = "change-recipe-productivity", recipe = "rocket-fuel-from-phosphoric-acid", change = 0.1 })
-add_tech_effect("processing-unit-productivity",
-  { type = "change-recipe-productivity", recipe = "processing-unit-from-phosphoric-acid", change = 0.1 })
+apia_utils.add_tech_effect("plastic-bar-productivity",
+	{ type = "change-recipe-productivity", recipe = "bioplastic-from-wax", change = 0.1 })
+  
+apia_utils.add_tech_effect("rocket-fuel-productivity",
+	{ type = "change-recipe-productivity", recipe = "rocket-fuel-from-phosphoric-acid", change = 0.1 })
+	
+apia_utils.add_tech_effect("processing-unit-productivity",
+	{ type = "change-recipe-productivity", recipe = "processing-unit-from-phosphoric-acid", change = 0.1 })
   

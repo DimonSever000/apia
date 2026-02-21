@@ -3,6 +3,7 @@ local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
+local apia_utils = require("lib")
 
 
 data:extend{
@@ -21,19 +22,7 @@ data:extend{
     subgroup = "explosions",
     height = 0,
     animations = util.empty_sprite(),
-    surface_conditions =
-    {
-		{
-			property = "pressure",
-			min = 2500,
-			max = 2500
-		},
-		{
-			property = "gravity",
-			min = 50,
-			max = 50
-		}
-    },
+    surface_conditions = apia_utils.surface_conditions("apia"),
     created_effect =
     {
       type = "direct",

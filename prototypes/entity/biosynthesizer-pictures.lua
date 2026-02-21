@@ -1,34 +1,18 @@
 require ("__base__.prototypes.entity.pipecovers")
 local animation_speed = 0.16
 
-local function biosynthesizer_pipe_north_pictures()
-  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-north",
+local function biosynthesizer_pipe_h_pictures()
+  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-h",
   {
     repeat_count = frames,
     scale = 0.5
   })
 end
 
-local function biosynthesizer_pipe_east_pictures()
-  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-east",
+local function biosynthesizer_pipe_v_pictures()
+  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-v",
   {
     repeat_count = frames,
-    scale = 0.5
-  })
-end
-
-local function biosynthesizer_pipe_south_pictures()
-  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-south",
-  {
-    repeat_count = frames,
-    scale = 0.5
-  })
-end
-
-local function biosynthesizer_pipe_west_pictures()
-  return util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-west",
-  {
-    frame_count = frames,
     scale = 0.5
   })
 end
@@ -79,57 +63,52 @@ return
 	},
     working_visualisations =
     {
-      {
-        fadeout = true,
-        effect = "flicker",
-        animation = 
 		{
-			filename = "__apia__/graphics/entity/biosynthesizer/biosynthesizer-emission.png",
-			width = 500,
-			height = 500,
-			line_length = 8,
-			animation_speed = animation_speed,
-			priority = "extra-high",
-            frame_count = 60,
-            blend_mode = "additive",
-            draw_as_glow = true,
-            scale = 0.35,
-			shift = {0, -0.35},
+			effect = "uranium-glow",
+			fadeout = true,
+			light = {intensity = 0.2, size = 9.9, shift = {0, 0}, color = {1, 0, 0}}
 		},
-      },
-      {
-        effect = "flicker",
-        fadeout = true,
-        apply_recipe_tint = "primary",
-        light = {intensity = 0.5, size = 17, shift = {-0.5, 0}, color = {r = 1, g = 1, b = 1}}
-      },
-	  {
-        always_draw = true,
-        name = "output-pipe",
-        enabled_by_name = true,
-        north_animation = biosynthesizer_pipe_north_pictures(),
-        north_secondary_draw_order = -10, -- behind main animation
-        east_animation = biosynthesizer_pipe_east_pictures(),
-        south_animation = biosynthesizer_pipe_south_pictures(),
-        west_animation = biosynthesizer_pipe_west_pictures()
-      },
-      {
-        always_draw = true,
-        name = "input-pipe",
-        enabled_by_name = true,
-        north_animation = biosynthesizer_pipe_south_pictures(),
-        east_animation = biosynthesizer_pipe_west_pictures(),
-        south_animation = biosynthesizer_pipe_north_pictures(),
-        south_secondary_draw_order = -10, -- behind main animation
-        west_animation = biosynthesizer_pipe_east_pictures()
-      },
+		{
+			fadeout = true,
+			effect = "flicker",
+			animation = 
+			{
+				filename = "__apia__/graphics/entity/biosynthesizer/biosynthesizer-emission.png",
+				width = 500,
+				height = 500,
+				line_length = 8,
+				animation_speed = animation_speed,
+				priority = "extra-high",
+				frame_count = 60,
+				blend_mode = "additive",
+				draw_as_glow = true,
+				scale = 0.35,
+				shift = {0, -0.35},
+			},
+		},
+		{
+			always_draw = true,
+			name = "output-pipe",
+			enabled_by_name = true,
+			north_animation = biosynthesizer_pipe_v_pictures(),
+			east_animation = biosynthesizer_pipe_h_pictures(),
+			east_secondary_draw_order = -10,
+			south_animation = biosynthesizer_pipe_v_pictures(),
+			west_animation = biosynthesizer_pipe_h_pictures(),
+			west_secondary_draw_order = -10,
+		},
+		{
+			always_draw = true,
+			name = "input-pipe",
+			enabled_by_name = true,
+			north_animation = biosynthesizer_pipe_h_pictures(),
+			north_secondary_draw_order = -10,
+			east_animation = biosynthesizer_pipe_v_pictures(),
+			south_animation = biosynthesizer_pipe_h_pictures(),
+			south_secondary_draw_order = -10,
+			west_animation = biosynthesizer_pipe_v_pictures(),
+		},
     }
-  },
-  pipe_picture_frozen = {
-    north = util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-north-frozen", { scale = 0.5, shift = {-1, 3} }),
-    east = util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-east-frozen", { scale = 0.5, shift = {-3, -1} }),
-    south = util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-south-frozen", { scale = 0.5, shift = {1, -3} }),
-    west = util.sprite_load("__apia__/graphics/entity/biosynthesizer/biosynthesizer-pipe-connections-west-frozen", { scale = 0.5, shift = {3, 1} })
   },
   light_flicker =
   {

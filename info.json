@@ -1,9 +1,9 @@
 {
   "name": "apia",
-  "version": "0.0.2",
-  "title": "Apia",
+  "version": "0.1.0",
+  "title": "Apia–Carnova system",
   "author": "Cybranian (DimonSever000)",
-  "description": "A moon of Gleba with a dense and viscous atmosphere. Its surface consists of numerous small islands drifting in oceans of nutrient-rich royal jelly. Fauna is represented by a symbiosis of honey-bearing insects and invertebrate larvae.",
+  "description": "A twin planetary system orbiting a common center. The life-rich oceans of royal jelly on Apia and the bloody seas of Carnova, which you will industrialize.",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0.50",

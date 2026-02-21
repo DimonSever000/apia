@@ -1,4 +1,9 @@
 local sounds = require("__base__.prototypes.entity.sounds")
+local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
+local util = require("util")
+local smoke_fast_animation = smoke_animations.trivial_smoke_fast
+local trivial_smoke = smoke_animations.trivial_smoke
+
 
 
 local phosphorus_cloud = table.deepcopy(data.raw["smoke-with-trigger"]["poison-cloud"])
@@ -92,21 +97,13 @@ phosphorus_cloud_visual_dummy.affected_by_wind = true
 phosphorus_cloud_visual_dummy.color = {0.1, 0.1, 0.1, 0.01}
 
 
-data:extend{phosphorus_cloud, phosphorus_cloud_visual_dummy}
 
-
-
-capsule_smoke =
+data:extend
 {
-  {
-    name = "smoke-fast",
-    deviation = {0.15, 0.15},
-    frequency = 1,
-    position = {0, 0},
-    starting_frame = 3,
-    starting_frame_deviation = 5,
-  }
+	phosphorus_cloud, 
+	phosphorus_cloud_visual_dummy,
 }
+
 
 data:extend(
 {
@@ -163,7 +160,17 @@ data:extend(
       height = 20,
       priority = "high"
     },
-    smoke = capsule_smoke
+    smoke = 
+	{
+		{
+			name = "smoke-fast",
+			deviation = {0.15, 0.15},
+			frequency = 1,
+			position = {0, 0},
+			starting_frame = 3,
+			starting_frame_deviation = 5,
+		}
+	}
   },
   {
     type = "artillery-projectile",

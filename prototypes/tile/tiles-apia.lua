@@ -10,19 +10,8 @@ local tile_spritesheet_layout = tile_graphics.tile_spritesheet_layout
 
 local patch_for_inner_corner_of_transition_between_transition = tile_graphics.patch_for_inner_corner_of_transition_between_transition
 
-local function lerp_color_no_alpha(a, b, amount)
-  return
-  {
-    a[1] + amount * (b[1] - a[1]),
-    a[2] + amount * (b[2] - a[2]),
-    a[3] + amount * (b[3] - a[3])
-  }
-end
 
 
-require("__space-age__/prototypes/tile/tiles-aquilo")
-require("__space-age__/prototypes/tile/tiles-vulcanus")
-require("__space-age__/prototypes/tile/tiles-gleba")
 
 table.insert(water_tile_type_names, "royal-jelly-lake")
 table.insert(water_tile_type_names, "royal-jelly-lake2")

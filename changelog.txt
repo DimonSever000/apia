@@ -1,10 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.1
-Date: 31-01-2026
-- Released
+Version: 0.1.0
+Date: 21-02-2026
+Global update
+- Added new planet - Carnova
+- Apia-Carnova is now a two-planet system
+- Global balance changes
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
-Date: 02-02-2026
+Date: 08-02-2026
 - Added wax platform title translation
 - Changed honey processing technology texture
 - The larva fuel value rise from 1MJ to 2MJ
@@ -14,4 +17,8 @@ Date: 02-02-2026
 - Orbit draw fixes
 - Fossils now have a 10% chance to drop copper ore instead of 15%
 - Technologies cost changed
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+Date: 31-01-2026
+- Released
 ---------------------------------------------------------------------------------------------------

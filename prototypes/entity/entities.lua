@@ -1,7 +1,11 @@
 local sounds = require("__base__.prototypes.entity.sounds")
 local hit_effects = require("__base__.prototypes.entity.hit-effects")
-require ("__base__.prototypes.entity.pipecovers")
 local biosynthesizer_pictures = require("__apia__.prototypes.entity.biosynthesizer-pictures")
+local base_sounds = require ("__base__.prototypes.entity.sounds")
+local base_tile_sounds = require("__base__/prototypes/tile/tile-sounds")
+local decorative_trigger_effects = require("__base__.prototypes.decorative.decorative-trigger-effects")
+require ("__base__.prototypes.entity.pipecovers")
+local apia_utils = require("lib")
 
 
 data:extend(
@@ -64,19 +68,7 @@ data:extend(
         percent = 70
       }
     },
-    surface_conditions =
-    {
-      {
-        property = "pressure",
-        min = 2500,
-        max = 2500
-      },
-	  {
-        property = "gravity",
-        min = 50,
-        max = 50
-      }
-    },
+    surface_conditions = apia_utils.surface_conditions("apia"),
     fast_replaceable_group = "artificial-hive",
     graphics_set =
     {
@@ -217,13 +209,13 @@ data:extend(
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
-    module_slots = 8,
+    module_slots = 6,
 	drawing_box_vertical_extension = 0.4,
     icons_positioning =
     {
-      {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.95}, max_icons_per_row = 4}
+      {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.95}, max_icons_per_row = 3}
     },
-    icon_draw_specification = {scale = 2, shift = {0, -0.3}},
+    icon_draw_specification = {scale = 2, shift = {0, -0.35}},
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     effect_receiver = { base_effect = { productivity = 0.5 }},
     graphics_set = require("__apia__.prototypes.entity.biosynthesizer-pictures").graphics_set,
@@ -242,12 +234,13 @@ data:extend(
     {
       type = "burner",
       fuel_categories = {"nutrients"},
-      effectivity = 1.25,
+      effectivity = 1,
       burner_usage = "nutrients",
       fuel_inventory_size = 1,
       emissions_per_minute = { pollution = -1 },
+	  light_flicker = {color = {0,0,0}},
     },
-    energy_usage = "800kW",
+    energy_usage = "1.2MW",
     heating_energy = "100kW",
     crafting_categories = 
 	{
@@ -259,7 +252,8 @@ data:extend(
 		"organic",
 		"organic-or-hand-crafting",
 		"organic-or-assembling",
-		"organic-or-chemistry"
+		"organic-or-chemistry",
+		"refresh"
 	},
     fluid_boxes =
     {
@@ -283,13 +277,51 @@ data:extend(
         pipe_connections = {{ flow_direction="input", direction = defines.direction.south, position = {1, 2} }}
       },
       {
+        production_type = "input",
+        pipe_picture = util.empty_sprite(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        enable_working_visualisations = { "input-pipe" },
+        volume = 100,
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {-1, -2} }}
+      },
+      {
+        production_type = "input",
+        pipe_picture = util.empty_sprite(),
+        pipe_picture_frozen = require("__apia__.prototypes.entity.biosynthesizer-pictures").pipe_picture_frozen,
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        enable_working_visualisations = { "input-pipe" },
+        volume = 100,
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1, -2} }}
+      },
+	  {
+        production_type = "output",
+        pipe_picture = util.empty_sprite(),
+        pipe_picture_frozen = require("__apia__.prototypes.entity.biosynthesizer-pictures").pipe_picture_frozen,
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        enable_working_visualisations = { "output-pipe" },
+        volume = 1000,
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.west, position = {-2, 1} }}
+      },
+      {
+        production_type = "output",
+        pipe_picture = util.empty_sprite(),
+        pipe_covers = pipecoverspictures(),
+        always_draw_covers = false,
+        enable_working_visualisations = { "output-pipe" },
+        volume = 1000,
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.east, position = {2, 1} }}
+      },
+      {
         production_type = "output",
         pipe_picture = util.empty_sprite(),
         pipe_covers = pipecoverspictures(),
         always_draw_covers = false,
         enable_working_visualisations = { "output-pipe" },
         volume = 100,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {-1, -2} }}
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.west, position = {-2, -1} }}
       },
       {
         production_type = "output",
@@ -299,14 +331,10 @@ data:extend(
         always_draw_covers = false,
         enable_working_visualisations = { "output-pipe" },
         volume = 100,
-        pipe_connections = {{ flow_direction="output", direction = defines.direction.north, position = {1, -2} }}
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.east, position = {2, -1} }}
       }
     },
     fluid_boxes_off_when_no_fluid_recipe = true,
-    production_health_effect =
-    {
-		producing = 1 / 120
-    },
   },
   {
 	  name = "bioreactor",
@@ -436,5 +464,102 @@ data:extend(
 			rotate = false,
 			orientation_to_variation = false
 		  },
+	},
+	{
+		type = "trivial-smoke",
+		name = "carnova-raindrops",
+		duration = 30,
+		fade_in_duration = 10,
+		fade_away_duration = 10,
+		spread_duration = 30,
+		start_scale = 1,
+		end_scale = 0.8,
+		cyclic = true,
+		affected_by_wind = false,
+		animation =
+		{
+		  width = 256,
+		  height = 256,
+		  line_length = 2,
+		  frame_count = 4,
+		  priority = "high",
+		  animation_speed = 0.0001,
+		  scale = 0.5,
+		  filename = "__apia__/graphics/entity/red-rain/red-rain.png",
+		  flags = { "smoke" }
+		}
+	},
+	{
+		type = "container",
+		name = "rotting-spidertron-remains",
+		icon = "__base__/graphics/icons/spidertron.png",
+		flags = {"placeable-neutral", "placeable-off-grid"},
+		minable = { mining_time = 2 },
+		open_sound = sounds.metallic_chest_open,
+		close_sound = sounds.metallic_chest_close,
+		fast_replaceable_group = "container",
+		circuit_connector = circuit_connector_definitions["chest"],
+		circuit_wire_max_distance = default_circuit_wire_max_distance,
+		hidden = true,
+		inventory_size = 48,
+		render_layer = "object",
+		resistances =
+		{
+		  {
+			type = "impact",
+			percent = 60
+		  }
+		},
+		max_health = 150,
+		selection_box = {{-1, -1}, {1, 1}},
+		collision_box = {{-1, -1}, {1, 1}},
+		picture =
+		{
+		  layers =
+		  {
+			{
+			  filename = "__base__/graphics/entity/spidertron/remnants/spidertron-remnants.png",
+			  priority = "high",
+			  width = 448,
+			  height = 448,
+			  shift = util.by_pixel(0, 0),
+			  scale = 0.5,
+			},
+		  }
+		},
+		created_effect = {
+		  type = "direct",
+		  action_delivery =
+		  {
+			type = "instant",
+			source_effects =
+			{
+			  {
+				type = "create-decorative",
+				decorative = "pale-lettuce-lichen-cups-6x6",
+				spawn_min = 1,
+				spawn_max = 10,
+				spawn_min_radius = 1,
+				spawn_max_radius = 4
+			  },
+			  {
+				type = "create-decorative",
+				decorative = "flesh-fingers",
+				spawn_min = 2,
+				spawn_max = 4,
+				spawn_min_radius = 1,
+				spawn_max_radius = 3
+			  },
+			  {
+				type = "create-decorative",
+				decorative = "urchin-cactus",
+				spawn_min = 1,
+				spawn_max = 4,
+				spawn_min_radius = 1,
+				spawn_max_radius = 3
+			  },
+			}
+		  }
+		}
 	},
 })

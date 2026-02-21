@@ -24,4 +24,8 @@ data:extend(
     type = "recipe-category",
     name = "apicultural-or-electronics-with-fluid"
   },
+  {
+    type = "recipe-category",
+    name = "refresh"
+  },
 })
