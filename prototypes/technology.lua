@@ -491,6 +491,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "solid-fuel-from-glycerine"
       },
+	  {
+        type = "unlock-recipe",
+        recipe = "bioplastic-from-proteins"
+      },
     },
     prerequisites = {"flesh-separation", "phosphorus"},
     research_trigger =

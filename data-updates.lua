@@ -65,12 +65,12 @@ local function generate_refresh_recipe(item)
     ingredients =
 	{
       {type = "item", name = item.name, amount = 1, ignored_by_productivity = 1},
-	  {type = "fluid", name = "lymph", amount = 10, ignored_by_productivity = 10},
+	  {type = "fluid", name = "lymph", amount = 10, ignored_by_stats = 10, ignored_by_productivity = 10},
     },
     results =
 	{
       {type="item", name=item.name, amount=1, ignored_by_productivity = 1},
-	  {type = "fluid", name = "dirty-lymph", amount = 10, ignored_by_productivity = 10},
+	  {type = "fluid", name = "dirty-lymph", amount = 5, ignored_by_stats = 5, ignored_by_productivity = 5},
 	  -- ignored_by_productivity just in case
     }
   }

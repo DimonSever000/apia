@@ -534,12 +534,12 @@ data:extend
     energy_required = 6,
     ingredients =
     {
-      {type = "fluid", name = "dirty-lymph", amount = 100},
+      {type = "fluid", name = "dirty-lymph", amount = 100, ignored_by_stats = 100, ignored_by_productivity = 100},
 	  {type = "item", name = "calcite", amount = 1},
     },
     results =
     {
-	  {type = "fluid", name = "lymph", amount = 100},
+	  {type = "fluid", name = "lymph", amount = 100, ignored_by_stats = 100, ignored_by_productivity = 100},
 	  {type = "item", name = "carbon", amount = 2, probability = 0.5},
     },
   },
@@ -557,13 +557,13 @@ data:extend
     ingredients =
     {
 	  {type = "fluid", name = "blood", amount = 200},
-	  {type = "fluid", name = "lymph", amount = 50, ignored_by_productivity = 50},
+	  {type = "fluid", name = "lymph", amount = 50, ignored_by_stats = 50, ignored_by_productivity = 50},
     },
     results =
     {
 	  {type = "item", name = "nutrients", amount = 4},
 	  {type = "fluid", name = "water", amount = 100},
-	  {type = "fluid", name = "dirty-lymph", amount = 50, ignored_by_productivity = 50},
+	  {type = "fluid", name = "dirty-lymph", amount = 50, ignored_by_stats = 50, ignored_by_productivity = 50},
     },
   },
   {
@@ -778,6 +778,7 @@ data:extend
 	order = "a-f-d[bioplastic]",
     enabled = false,
     allow_productivity = true,
+	auto_recycle = false,
     energy_required = 3,
 	ingredients =
 	{
@@ -800,6 +801,7 @@ data:extend
 	surface_conditions = apia_utils.surface_conditions("apia"),
     enabled = false,
     allow_productivity = true,
+	auto_recycle = false,
     energy_required = 5,
 	ingredients =
 	{
@@ -822,6 +824,7 @@ data:extend
 	surface_conditions = apia_utils.surface_conditions("carnova"),
     enabled = false,
     allow_productivity = true,
+	auto_recycle = false,
     energy_required = 5,
 	ingredients =
 	{
