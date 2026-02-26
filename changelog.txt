@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 26-02-2026
+- Added a setting for lymph consumption during refresh
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 26-02-2026
 - Fixed the bioplastic recipe on Carnova (it was not unlocked by any research)

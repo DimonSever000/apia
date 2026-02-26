@@ -2,6 +2,93 @@ local util = require("util")
 local apia_utils = {}
 
 
+
+local function generate_freshness_recipe_icon(item)
+	
+	local refresh_overlay_icon = "__apia__/graphics/icons/refresh.png"
+	local icons = {}
+
+	if item.icons then
+		for i = 1, #item.icons do
+			icons[#icons+1] = table.deepcopy(item.icons[i])
+		end
+	else
+		icons[#icons+1] = {
+		  icon = item.icon,
+		  icon_size = item.icon_size
+		}
+	end
+
+	icons[#icons+1] =
+	{
+		icon = refresh_overlay_icon,
+		icon_size = 64
+	}
+
+	return icons
+end
+
+function apia_utils.generate_refresh_recipe(item)
+	
+	if (item.spoil_result ~= "spoilage" and item.spoil_to_trigger_result == nil) then 
+		return
+	end
+	
+	if not (item.spoil_ticks or item.spoil_ticks <= 1) then
+		return
+	end
+
+	if item.fuel_category == "nutrients" then
+		return
+	end
+
+	local recipe_name = item.name .. "-refresh-freshness"
+
+	local lymph_percent = settings.startup["apia-lymph-consumption-percent"].value / 100
+	local lymph_output = 10 * (1 - lymph_percent)
+  
+	local recipe =
+	{
+		type = "recipe",
+		name = recipe_name,
+		category = "refresh",
+		subgroup = "refresh",
+		order = item.order,
+		hidden = false,
+		enabled = false,
+
+		allow_productivity = false,
+		allow_as_intermediate = false,
+		allow_decomposition = false,
+		allow_quality = false,
+
+		reset_freshness_on_craft = true,
+		energy_required = 2,
+
+		localised_name = {"recipe-name.refresh-freshness", {"item-name." .. item.name}},
+		icons = generate_freshness_recipe_icon(item),
+
+		ingredients =
+		{
+		  {type = "item", name = item.name, amount = 1, ignored_by_productivity = 1},
+		  {type = "fluid", name = "lymph", amount = 10, ignored_by_stats = 10, ignored_by_productivity = 10},
+		},
+
+		results =
+		{
+		  {type = "item", name = item.name, amount = 1, ignored_by_productivity = 1},
+		  {type = "fluid", name = "dirty-lymph", amount = lymph_output, ignored_by_stats = lymph_output, ignored_by_productivity = lymph_output},
+		}
+	}
+
+	data:extend({recipe})
+
+	apia_utils.add_tech_effect(
+		"refreshment",
+		{ type = "unlock-recipe", recipe = recipe_name }
+	)
+end
+
 function apia_utils.surface_conditions(planet)
 	local surface_conditions
 	if planet == "apia" then
