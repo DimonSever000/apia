@@ -34,7 +34,7 @@ function apia_utils.generate_refresh_recipe(item)
 		return
 	end
 	
-	if not (item.spoil_ticks or item.spoil_ticks <= 1) then
+	if not item.spoil_ticks or item.spoil_ticks <= 1 then
 		return
 	end
 
