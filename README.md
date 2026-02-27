@@ -10,3 +10,6 @@ Discord: https://discord.gg/7WAtZSaZz5
 # CREDITS & LICENCE
 - Biosynthesizer textures by **Harricane046** (CC BY)
 - unused renders by **malcolmriley** (CC-BY-4.0)
+- Sphere of nectar track by **JonJon**. Used with permission for this mod
+- Moonlight track by **Clavier-Music**. Free licence
+- Cosmos track by **The_Mountain**. Free licence

@@ -1,41 +1,55 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 27-02-2026
+  Sounds:
+    - Added ambient for Apia planet from 10 soundtracks.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 26-02-2026
-- Lib hotfix
+  Bugfixes:
+    - Lib hotfix.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 26-02-2026
-- Added a setting for lymph consumption during refresh
+  Features:
+    - Added a setting for lymph consumption during refresh.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 26-02-2026
-- Fixed the bioplastic recipe on Carnova (it was not unlocked by any research)
+  Bugfixes:
+    - Fixed the bioplastic recipe on Carnova (it was not unlocked by any research).
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 24-02-2026
-- Auto recycle fixes for alternative carbon fiber recipes
-- Refresh recipes now consume some lymph
+  Balancing:
+    - Refresh recipes now consume some lymph.
+  Bugfixes:
+    - Auto recycle fixes for alternative carbon fiber recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 21-02-2026
-Global update
-- Added new planet - Carnova
-- Apia-Carnova is now a two-planet system
-- Global balance changes
+  Major Features:
+    - Added new planet - Carnova.
+    - Apia-Carnova is now a two-planet system.
+    - Global balance changes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 08-02-2026
-- Added wax platform title translation
-- Changed honey processing technology texture
-- The larva fuel value rise from 1MJ to 2MJ
-- The larva spoils in 5 minutes instead of 10
-- The recipe for creating nutrients from larvae can now be completed in hand
-- The thruster's productivity technology now extends to the advanced recipe
-- Orbit draw fixes
-- Fossils now have a 10% chance to drop copper ore instead of 15%
-- Technologies cost changed
+  Balancing:
+    - The larva fuel value rise from 1MJ to 2MJ.
+    - The larva spoils in 5 minutes instead of 10.
+    - The recipe for creating nutrients from larvae can now be completed in hand.
+    - Fossils now have a 10% chance to drop copper ore instead of 15%.
+    - Technologies cost changed.
+  Locale:
+    - Added wax platform title translation.
+  Graphics:
+    - Changed honey processing technology texture.
+  Bugfixes:
+    - The thruster's productivity technology now extends to the advanced recipe.
+    - Orbit draw fixes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 31-01-2026
-- Released
----------------------------------------------------------------------------------------------------
+  Major Features:
+    - Initial release.
