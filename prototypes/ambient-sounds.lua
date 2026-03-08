@@ -87,4 +87,86 @@ data:extend
 		sound = {filename = "__apia__/sound/ambient/apia/apia-10.ogg", volume = 0.7,},
 		weight = 10
 	},
+	
+	
+	
+	{
+		type = "ambient-sound",
+		name = "carnova-1-hero",
+		track_type = "hero-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-1-hero.ogg", volume = 0.7,},
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-1",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-1-hero.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-2",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-2.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-3",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-3.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-4",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-4.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-5",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-5.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-6",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-6.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-7",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-7.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-8",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-8.ogg", volume = 0.7,},
+		weight = 10
+	},
+	{
+		type = "ambient-sound",
+		name = "carnova-9",
+		track_type = "main-track",
+		planet = "carnova",
+		sound = {filename = "__apia__/sound/ambient/carnova/carnova-9.ogg", volume = 0.7,},
+		weight = 10
+	},
 })

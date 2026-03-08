@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 08-03-2026
+  Locale:
+    - Added Carnova blood tiles translation.
+  Sounds:
+    - Added ambient for Carnova planet from 9 soundtracks.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 27-02-2026
   Sounds:
