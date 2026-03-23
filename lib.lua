@@ -198,4 +198,13 @@ function apia_utils.add_crafting_categories(proto, categories)
 end
 
 
+function apia_utils.add_recycling_result(recipe_name, item, amount)
+  local r = data.raw.recipe[recipe_name.."-recycling"]
+  if r then
+    r.results = r.results or {}
+    table.insert(r.results,{type="item",name=item,amount=amount})
+  end
+end
+
+
 return apia_utils

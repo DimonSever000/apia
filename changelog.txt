@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.7
+Date: 23-03-2026
+  Bugfixes:
+    - Gleba soil recycling recipe has been fixed. Phosphorus now drops during recycling.
+    - Biosynthesizer recycling recipe has been fixed. Now when recycling, spoilage will drop instead of larvae or roe.
+  Compatibility:
+    - Added compatibility with the bioprocessing-tab mod. Apia-Carnova categories are now categorized as bioprocessing.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 08-03-2026
   Locale:
