@@ -509,6 +509,7 @@ data:extend
     enabled = false,
     allow_productivity = true,
 	auto_recycle = false,
+	reset_freshness_on_craft = true,
     energy_required = 16,
     ingredients =
     {
@@ -613,6 +614,7 @@ data:extend
     enabled = false,
     allow_productivity = true,
 	auto_recycle = false,
+	reset_freshness_on_craft = true,
     energy_required = 2,
     ingredients =
     {
