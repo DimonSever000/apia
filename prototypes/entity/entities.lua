@@ -376,7 +376,6 @@ data:extend(
 		type = "electric",
 		usage_priority = "secondary-output"
 	  },
-	  
 	  animation =
 		  {
 			layers =
@@ -409,7 +408,6 @@ data:extend(
 				scale = 0.5
 			  }),
 			},
-
 			{
 			  --constant_speed = true,
 			  always_draw = true,

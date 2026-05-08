@@ -30,6 +30,10 @@ end
 
 function apia_utils.generate_refresh_recipe(item)
 	
+	if item.hidden then
+		return
+	end
+	
 	if (item.spoil_result ~= "spoilage" and item.spoil_to_trigger_result == nil) then 
 		return
 	end

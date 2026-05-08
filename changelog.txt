@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 08-05-2026
+  Bugfixes:
+    - Hidden items can no longer restore freshness.
+  Compatibility:
+    - Added compatibility with the orbital cannon mod. The orbital cannon can now be used for transport between Apia and Carnova.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 28-03-2026
   Bugfixes:
@@ -10,7 +17,7 @@ Date: 23-03-2026
     - Gleba soil recycling recipe has been fixed. Phosphorus now drops during recycling.
     - Biosynthesizer recycling recipe has been fixed. Now when recycling, spoilage will drop instead of larvae or roe.
   Compatibility:
-    - Added compatibility with the bioprocessing-tab mod. Apia-Carnova categories are now categorized as bioprocessing.
+    - Added compatibility with the bio processing tab mod. Apia-Carnova categories are now categorized as bioprocessing.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 08-03-2026

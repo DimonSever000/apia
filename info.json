@@ -1,6 +1,6 @@
 {
   "name": "apia",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "Apia–Carnova system",
   "author": "Cybranian (DimonSever000)",
   "description": "A twin planetary system orbiting a common center. The life-rich oceans of royal jelly on Apia and the bloody seas of Carnova, which you will industrialize.",
@@ -8,7 +8,9 @@
   "dependencies": [
     "base >= 2.0.50",
     "space-age >= 2.0.50",
-	"PlanetsLib"
+	"PlanetsLib",
+    "? bioprocessing-tab",
+	"? orbital-cannon"
 ],
 "space_travel_required": true
 }
