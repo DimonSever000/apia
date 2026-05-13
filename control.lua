@@ -53,14 +53,22 @@ script.on_event(defines.events.on_chunk_generated, function(event)
 
   if entity and entity.valid and entity.get_inventory then
     local inv = entity.get_inventory(defines.inventory.chest)
+	
     if inv then
-      inv.insert{name = "pistol", count = 1}
-	  inv.insert{name = "firearm-magazine", count = math.random(1, 50)}
-	  inv.insert{name = "iron-plate", count = math.random(5, 100)}
-	  inv.insert{name = "copper-plate", count = math.random(5, 100)}
-	  inv.insert{name = "steel-plate", count = math.random(5, 100)}
-	  inv.insert{name = "electronic-circuit", count = math.random(5, 100)}
-	  inv.insert{name = "repair-pack", count = math.random(2, 25)}
+	
+	  local function safe_insert(name, count)
+        if prototypes.item[name] then
+          inv.insert{name = name, count = count}
+        end
+      end
+	  
+      safe_insert("pistol", 1)
+      safe_insert("firearm-magazine", math.random(1, 50))
+      safe_insert("iron-plate", math.random(5, 100))
+      safe_insert("copper-plate", math.random(5, 100))
+      safe_insert("steel-plate", math.random(5, 100))
+      safe_insert("electronic-circuit", math.random(5, 100))
+      safe_insert("repair-pack", math.random(2, 25))
     end
   end
 
