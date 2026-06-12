@@ -20,12 +20,13 @@ data:extend
     ingredients =
     {
       {type = "item", name = "raw-larvae", amount = 1},
-	  {type = "item", name = "nutrients", amount = 5},
+	  {type = "item", name = "honey", amount = 1},
+	  --{type = "item", name = "nutrients", amount = 5},
       {type="fluid", name="royal-jelly", amount=50}
     },
     results =
     {
-      {type = "item", name = "raw-larvae", amount = 4}
+      {type = "item", name = "raw-larvae", amount = 3}
     },
   },
   {

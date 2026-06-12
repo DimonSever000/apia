@@ -30,6 +30,10 @@ end
 
 function apia_utils.generate_refresh_recipe(item)
 	
+	if item.apia_disable_refresh_recipe then
+		return
+	end
+	
 	if item.hidden then
 		return
 	end

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 12-06-2026
+  Balancing:
+    - The larvae cultivation recipe now requires honey instead of nutrients.
+  Compatibility:
+    - Added API field apia_disable_refresh_recipe to disable the generation of a refresh recipe.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 13-05-2026
   Bugfixes:
