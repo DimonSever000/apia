@@ -53,29 +53,10 @@ table.insert(data.raw.lab["lab"].inputs, "apicultural-science-pack")
 table.insert(data.raw.lab["biolab"].inputs, "apicultural-science-pack")
 
 
-if settings.startup["apia-vanila-science"].value then
-	apia_utils.add_ingredient_to_recipe(
-	  "overgrowth-yumako-soil",
-	  { type = "item", name = "phosphorus", amount = 4 }
-	)
-	apia_utils.add_ingredient_to_recipe(
-	  "overgrowth-jellynut-soil",
-	  { type = "item", name = "phosphorus", amount = 4 }
-	)
-	apia_utils.add_recycling_result("overgrowth-yumako-soil","phosphorus",1)
-	apia_utils.add_recycling_result("overgrowth-jellynut-soil","phosphorus",1)
-end
 
 
-local r = data.raw.recipe["biosynthesizer-recycling"]
-if r and r.results then
-  for i, res in pairs(r.results) do
-    if res.name == "raw-larvae" or res.name == "piranha-roe" then
-      r.results[i] = {type = "item", name = "spoilage", amount = 10}
-    end
-  end
-end
-
-
+require("__apia__.compat.recycling-spoilage-fixes")
+require("__apia__.compat.overgrowth-soil")
+require("__apia__.compat.productivity-technologies")
 require("__apia__.compat.bioprocessing-tab")
 require("__apia__.compat.orbital-cannon")

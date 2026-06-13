@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 13-06-2026
+  Modding:
+    - Some changes in data load order and file reorganization.
+  Compatibility:
+    - Added compatibility of the thruster fuel productivity technology with Muluna.
+	- Recipes are automatically added to the lubricant and carbon fiber productivity technology.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 12-06-2026
   Balancing:

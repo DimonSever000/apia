@@ -570,23 +570,17 @@ data:extend(
     type = "technology",
     name = "carbon-fiber-productivity",
     icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/carbon-fiber-productivity.png"),
-    effects =
-    {
-	  {
-        type = "change-recipe-productivity",
-        recipe = "carbon-fiber",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "carbon-fiber-apia",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "carbon-fiber-carnova",
-        change = 0.1
-      },
+    PlanetsLib_recipe_productivity_effects = 
+	{
+        purge_other_effects = true,
+        effects = 
+		{
+            {
+                type = "item",
+                name = "carbon-fiber",
+                change = 0.1
+            },
+        }
     },
     prerequisites = {"apicultural-science-pack"},
     unit =
@@ -673,58 +667,14 @@ data:extend(
   },
   {
     type = "technology",
-    name = "thruster-productivity",
-    icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/thruster-productivity.png"),
-    effects =
-    {
-      {
-        type = "change-recipe-productivity",
-        recipe = "thruster-oxidizer",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "advanced-thruster-oxidizer",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "thruster-fuel",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "advanced-thruster-fuel",
-        change = 0.1
-      },
-    },
-    prerequisites = {"apicultural-science-pack"},
-    unit =
-    {
-      count_formula = "1.5^L*1000",
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-        {"space-science-pack", 1},
-        {"apicultural-science-pack", 1}
-      },
-      time = 60
-    },
-    max_level = "infinite",
-    upgrade = true
-  },
-  {
-    type = "technology",
     name = "biter-egg-productivity",
     icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/biter-egg-productivity.png"),
-    effects =
+	effects =
     {
       {
         type = "change-recipe-productivity",
         recipe = "biter-egg",
-        change = 0.05
+        change = 0.1
       },
     },
     prerequisites = {"apicultural-science-pack", "captivity"},
@@ -751,29 +701,19 @@ data:extend(
     type = "technology",
     name = "lubricant-productivity",
     icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/lubricant-productivity.png"),
-    effects =
-    {
-      {
-        type = "change-recipe-productivity",
-        recipe = "lubricant",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "biolubricant",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "biolubricant-from-royal-jelly",
-        change = 0.1
-      },
-	  {
-        type = "change-recipe-productivity",
-        recipe = "biolubricant-from-glycerine",
-        change = 0.1
-      },
+    PlanetsLib_recipe_productivity_effects = 
+	{
+        purge_other_effects = true,
+        effects = 
+		{
+            {
+                type = "fluid",
+                name = "lubricant",
+                change = 0.1
+            },
+        }
     },
+	effects = { },
     prerequisites = {"apicultural-science-pack"},
     unit =
     {
@@ -796,7 +736,7 @@ data:extend(
     type = "technology",
     name = "flesh-productivity",
 	icons = util.technology_icon_constant_productivity("__apia__/graphics/technology/flesh-productivity.png"),
-    effects =
+	effects =
     {
       {
         type = "change-recipe-productivity",
@@ -857,6 +797,7 @@ data:extend(
     upgrade = true
   },
 })
+
 
 
 
