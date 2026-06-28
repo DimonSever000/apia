@@ -2,7 +2,6 @@ require ("__base__.prototypes.entity.enemy-constants")
 require ("__base__.prototypes.entity.biter-animations")
 require ("__apia__.prototypes.entity.piranha-animations")
 
-local biter_ai_settings = require ("__base__.prototypes.entity.biter-ai-settings")
 local enemy_autoplace = require ("__base__.prototypes.entity.enemy-autoplace-utils")
 local sounds = require ("__base__.prototypes.entity.sounds")
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
@@ -71,7 +70,12 @@ data:extend(
     run_animation = piranha_runanimation(4),
     running_sound_animation_positions = {2,},
     walking_sound = sounds.biter_walk(0, 0.3),
-    ai_settings = biter_ai_settings,
+    ai_settings =
+	{
+		destroy_when_commands_fail = true,
+		allow_try_return_to_spawner = true,
+		size_in_group = 3
+	},
 	resistances =
     {
       {
@@ -178,7 +182,7 @@ data:extend(
 	},
     call_for_help_radius = 50,
     spawn_decorations_on_expansion = true,
-	loot = {{item = "piranha-roe", probability = 1, count_min = 3, count_max = 6}},
+	loot = {{type = "item", name = "piranha-roe", independent_probability = 1, amount_min = 3, amount_max = 6}},
     spawn_decoration =
     {
 		{

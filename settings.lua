@@ -1,4 +1,5 @@
-data:extend({
+data:extend
+({
 	{
 		type = "bool-setting",
 		name = "apia-vanila-science",
@@ -25,5 +26,11 @@ data:extend({
 		minimum_value = 0,
 		maximum_value = 90,
 		allowed_values = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90},
-	}
+	},
+	{
+		type = "bool-setting",
+		name = "apia-flesh-reset-freshness-on-craft",
+		setting_type = "startup",
+		default_value = false
+	},
 })

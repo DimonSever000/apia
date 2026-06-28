@@ -16,37 +16,10 @@ end
 
 
 
-apia_utils.add_crafting_categories(data.raw.character.character, {
-    "apicultural-or-hand-crafting"
-})
-
 apia_utils.add_crafting_categories(data.raw["god-controller"].default, {
     "apicultural",
-    "apicultural-or-hand-crafting",
-    "apicultural-or-assembling",
-    "apicultural-or-chemistry",
-    "apicultural-or-electronics-with-fluid"
 })
 
-apia_utils.add_crafting_categories(data.raw["assembling-machine"]["assembling-machine-2"], {
-    "apicultural-or-hand-crafting",
-    "apicultural-or-assembling",
-    "apicultural-or-electronics-with-fluid"
-})
-
-apia_utils.add_crafting_categories(data.raw["assembling-machine"]["assembling-machine-3"], {
-    "apicultural-or-hand-crafting",
-    "apicultural-or-assembling",
-    "apicultural-or-electronics-with-fluid"
-})
-
-apia_utils.add_crafting_categories(data.raw["assembling-machine"]["chemical-plant"], {
-    "apicultural-or-chemistry"
-})
-
-apia_utils.add_crafting_categories(data.raw["assembling-machine"]["electromagnetic-plant"], {
-    "apicultural-or-electronics-with-fluid"
-})
 
 
 table.insert(data.raw.lab["lab"].inputs, "apicultural-science-pack")

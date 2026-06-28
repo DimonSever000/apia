@@ -7,33 +7,39 @@ data:extend
     type = "recipe",
     name = "larvae-cultivation",
     icon = "__apia__/graphics/icons/larvae-cultivation.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-processes",
     order = "a-a-b[larvae]",
     surface_conditions = apia_utils.surface_conditions("apia"),
     enabled = false,
     allow_productivity = true,
-    reset_freshness_on_craft = true,
 	auto_recycle = false,
 	show_amount_in_title = false,
     energy_required = 4,
     ingredients =
     {
       {type = "item", name = "raw-larvae", amount = 1},
-	  {type = "item", name = "honey", amount = 1},
-	  --{type = "item", name = "nutrients", amount = 5},
+	  --{type = "item", name = "honey", amount = 1},
+	  {type = "item", name = "nutrients", amount = 5},
       {type="fluid", name="royal-jelly", amount=50}
     },
     results =
     {
-      {type = "item", name = "raw-larvae", amount = 3}
+      {type = "item", name = "raw-larvae", amount = 4, reset_freshness_on_craft = true, quality_change = -1}
     },
   },
   {
     type = "recipe",
     name = "fossil-larvae-processing",
     icon = "__apia__/graphics/icons/fossil-larvae-processing.png",
-    category = "apicultural-or-hand-crafting",
+	categories =
+	{
+		"apicultural",
+		"crafting",
+	},
     subgroup = "apiculture-processes",
     order = "a-b-b[fossil]",
 	auto_recycle = false,
@@ -43,16 +49,20 @@ data:extend
     ingredients = {{type = "item", name = "fossil-larvae", amount = 1}},
     results =
     {
-		{type = "item", name = "stone", amount = 1, probability = 0.33},
-		{type = "item", name = "iron-ore", amount = 1, probability = 0.15},
-		{type = "item", name = "copper-ore", amount = 1, probability = 0.10},
-		{type = "item", name = "phosphorus", amount = 1, probability = 0.02},
+		{type = "item", name = "stone", amount = 1, independent_probability = 0.33},
+		{type = "item", name = "iron-ore", amount = 1, independent_probability = 0.15},
+		{type = "item", name = "copper-ore", amount = 1, independent_probability = 0.10},
+		{type = "item", name = "phosphorus", amount = 1, independent_probability = 0.02},
     },
   },
   {
     type = "recipe",
     name = "phosphoric-acid",
-    category = "apicultural-or-chemistry",
+	categories =
+	{
+		"apicultural",
+		"chemistry",
+	},
     subgroup = "apia-carnova-products",
 	order = "a-a-a",
 	auto_recycle = false,
@@ -70,7 +80,11 @@ data:extend
     type = "recipe",
     name = "battery-from-phosphoric-acid",
 	icon = "__apia__/graphics/icons/battery-from-phosphoric-acid.png",
-	category = "apicultural-or-chemistry",
+	categories =
+	{
+		"apicultural",
+		"chemistry",
+	},
 	subgroup = "apia-carnova-products",
 	order = "a-a-b",
     energy_required = 4,
@@ -88,7 +102,12 @@ data:extend
     type = "recipe",
     name = "processing-unit-from-phosphoric-acid",
 	icon = "__apia__/graphics/icons/processing-unit-from-phosphoric-acid.png",
-    category = "apicultural-or-electronics-with-fluid",
+    categories =
+	{
+		"apicultural",
+		"crafting-with-fluid",
+		"electromagnetics",
+	},
 	subgroup = "apia-carnova-products",
 	order = "a-a-c",
     enabled = false,
@@ -106,7 +125,11 @@ data:extend
     type = "recipe",
     name = "explosives-from-polysaccharides",
 	icon = "__apia__/graphics/icons/explosives-from-polysaccharides.png",
-    category = "apicultural-or-chemistry",
+    categories =
+	{
+		"apicultural",
+		"chemistry",
+	},
 	subgroup = "apiculture-products",
 	order = "b-c-a[explosives]",
     energy_required = 4,
@@ -140,7 +163,10 @@ data:extend
     type = "recipe",
     name = "flamethrower-ammo-from-phosphorus",
 	icon = "__apia__/graphics/icons/flamethrower-ammo-from-phosphorus.png",
-    category = "chemistry",
+	categories =
+	{
+		"chemistry",
+	},
     enabled = false,
     energy_required = 6,
     ingredients =
@@ -154,7 +180,10 @@ data:extend
     type = "recipe",
     name = "biolubricant-from-royal-jelly",
     icon = "__apia__/graphics/icons/biolubricant-from-royal-jelly.png",
-    category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-products",
 	order = "b-a-a[biolubricant]",
 	auto_recycle = false,
@@ -175,7 +204,11 @@ data:extend
     type = "recipe",
     name = "honeycombs-processing",
     icon = "__apia__/graphics/icons/honeycombs-processing.png",
-    category = "apicultural-or-hand-crafting",
+	categories =
+	{
+		"apicultural",
+		"crafting",
+	},
     subgroup = "apiculture-processes",
     order = "a-c-b[honeycombs]",
 	auto_recycle = false,
@@ -193,7 +226,10 @@ data:extend
     type = "recipe",
     name = "nutrients-from-honey",
     icon = "__apia__/graphics/icons/nutrients-from-honey.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-processes",
     order = "a-n-a[nutrients]",
 	auto_recycle = false,
@@ -207,7 +243,10 @@ data:extend
     type = "recipe",
     name = "nutrients-from-polysaccharides",
     icon = "__apia__/graphics/icons/nutrients-from-polysaccharides.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-processes",
     order = "a-n-b[nutrients]",
 	auto_recycle = false,
@@ -221,7 +260,10 @@ data:extend
     type = "recipe",
     name = "honey-processing",
     icon = "__apia__/graphics/icons/honey-processing.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-products",
     order = "a-a-b[honey]",
 	auto_recycle = false,
@@ -239,7 +281,10 @@ data:extend
     type = "recipe",
     name = "honey-dehydration",
     icon = "__apia__/graphics/icons/honey-dehydration.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-products",
     order = "a-a-c[honey]",
 	auto_recycle = false,
@@ -256,7 +301,10 @@ data:extend
     type = "recipe",
     name = "bioplastic-from-wax",
     icon = "__apia__/graphics/icons/bioplastic-from-wax.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-products",
 	order = "b-b-a[bioplastic]",
 	auto_recycle = false,
@@ -278,7 +326,10 @@ data:extend
     type = "recipe",
     name = "wax-platform",
     always_show_made_in = true,
-    category = "crafting-with-fluid",
+	categories =
+	{
+		"crafting-with-fluid",
+	},
     energy_required = 16,
 	allow_productivity = false,
     ingredients =
@@ -293,7 +344,10 @@ data:extend
     type = "recipe",
     name = "honeycombs",
     icon = "__apia__/graphics/icons/honeycombs.png",
-    category = "artificial-hive-process",
+	categories =
+	{
+		"artificial-hive-process",
+	},
     order = "c-a[honeycombs]",
     hide_from_player_crafting = true,
     auto_recycle = false,
@@ -311,7 +365,10 @@ data:extend
     type = "recipe",
     name = "solid-fuel-from-polysaccharides",
     icon = "__apia__/graphics/icons/solid-fuel-from-polysaccharides.png",
-    category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
 	subgroup = "apiculture-products",
 	order = "b-d-a[solid-fuel]",
     enabled = false,
@@ -332,7 +389,10 @@ data:extend
     type = "recipe",
     name = "rocket-fuel-from-phosphoric-acid",
     icon = "__apia__/graphics/icons/rocket-fuel-from-phosphoric-acid.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
 	subgroup = "apia-carnova-products",
 	order = "a-a-d",
     enabled = false,
@@ -349,13 +409,15 @@ data:extend
   {
     type = "recipe",
     name = "artificial-hive",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
 	subgroup = "apiculture",
     energy_required = 20,
     enabled = false,
 	auto_recycle = false,
     allow_productivity = false,
-    reset_freshness_on_craft = true,
     ingredients =
     {
       {type = "item", name = "wax", amount = 100},
@@ -364,19 +426,21 @@ data:extend
       {type = "item", name = "electric-engine-unit", amount = 5},
       {type = "fluid", name = "lubricant", amount = 100},
     },
-    results = {{type = "item", name = "artificial-hive", amount = 1}},
+    results = {{type = "item", name = "artificial-hive", amount = 1, reset_freshness_on_craft = true}},
 	surface_conditions = apia_utils.surface_conditions("apia"),
   },
   {
     type = "recipe",
     name = "bio-solar-panel",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
 	subgroup = "apiculture",
     energy_required = 20,
     enabled = false,
 	auto_recycle = false,
     allow_productivity = false,
-    reset_freshness_on_craft = true,
     ingredients =
     {	
 		{type = "item", name = "electronic-circuit", amount = 25},
@@ -385,14 +449,18 @@ data:extend
 		{type = "item", name = "tree-seed", amount = 5},
 		{type = "fluid", name = "water", amount = 200},
     },
-    results = {{type = "item", name = "bio-solar-panel", amount = 1}},
+    results = {{type = "item", name = "bio-solar-panel", amount = 1, reset_freshness_on_craft = true}},
 	surface_conditions = apia_utils.surface_conditions("apia-carnova"),
   },
   {
     type = "recipe",
     name = "biosynthesizer-apia",
 	icon = "__apia__/graphics/icons/biosynthesizer-apia.png",
-    category = "apicultural-or-assembling",
+	categories =
+	{
+		"apicultural",
+		"advanced-crafting",
+	},
 	subgroup = "apiculture",
     surface_conditions = apia_utils.surface_conditions("apia"),
     energy_required = 20,
@@ -411,7 +479,11 @@ data:extend
     type = "recipe",
     name = "biosynthesizer-carnova",
 	icon = "__apia__/graphics/icons/biosynthesizer-carnova.png",
-    category = "apicultural-or-assembling",
+	categories =
+	{
+		"apicultural",
+		"advanced-crafting",
+	},
 	subgroup = "apiculture",
     surface_conditions = apia_utils.surface_conditions("carnova"),
     energy_required = 20,
@@ -429,7 +501,10 @@ data:extend
   {
     type = "recipe",
     name = "bioreactor",
-    category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
 	subgroup = "apiculture",
     surface_conditions = apia_utils.surface_conditions("apia-carnova"),
     energy_required = 25,
@@ -461,7 +536,11 @@ data:extend
     type = "recipe",
     name = "simple-bone-processing",
     icon = "__apia__/graphics/icons/simple-bone-processing.png",
-	category = "apicultural-or-hand-crafting",
+	categories =
+	{
+		"apicultural",
+		"crafting",
+	},
     subgroup = "sarciculture-processes",
     order = "a-a-b[bones]",
     enabled = false,
@@ -481,7 +560,10 @@ data:extend
     type = "recipe",
     name = "advanced-bone-processing",
     icon = "__apia__/graphics/icons/advanced-bone-processing.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-a-c[bones]",
     enabled = false,
@@ -495,22 +577,24 @@ data:extend
     results =
     {
       {type = "item", name = "bone-meal", amount = 4},
-	  {type = "item", name = "calcite", amount = 1, probability = 0.25},
-	  {type = "item", name = "phosphorus", amount = 1, probability = 0.1},
+	  {type = "item", name = "calcite", amount = 1, independent_probability = 0.25},
+	  {type = "item", name = "phosphorus", amount = 1, independent_probability = 0.1},
     },
   },
   {
     type = "recipe",
     name = "roe-reproduction",
 	icon = "__apia__/graphics/icons/roe-reproduction.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-c-b[roe]",
 	surface_conditions = apia_utils.surface_conditions("carnova"),
     enabled = false,
     allow_productivity = true,
 	auto_recycle = false,
-	reset_freshness_on_craft = true,
     energy_required = 16,
     ingredients =
     {
@@ -520,14 +604,17 @@ data:extend
     },
     results =
     {
-      {type = "item", name = "piranha-roe", amount = 3, ignored_by_stats = 1, ignored_by_productivity = 1},
+      {type = "item", name = "piranha-roe", amount = 3, reset_freshness_on_craft = true, ignored_by_stats = 1, ignored_by_productivity = 1},
     },
   },
   {
     type = "recipe",
     name = "lymph-refining",
     icon = "__apia__/graphics/icons/lymph-refining.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
     order = "a-a-a[lymph]",
     enabled = false,
@@ -542,14 +629,17 @@ data:extend
     results =
     {
 	  {type = "fluid", name = "lymph", amount = 100, ignored_by_stats = 100, ignored_by_productivity = 100},
-	  {type = "item", name = "carbon", amount = 2, probability = 0.5},
+	  {type = "item", name = "carbon", amount = 2, independent_probability = 0.5},
     },
   },
   {
     type = "recipe",
     name = "blood-separation",
     icon = "__apia__/graphics/icons/blood-separation.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
     order = "a-b-a[blood]",
     enabled = false,
@@ -572,7 +662,10 @@ data:extend
     type = "recipe",
     name = "bone-meal-smelting",
 	icon = "__base__/graphics/icons/stone.png",
-    category = "smelting",
+	categories =
+	{
+		"smelting",
+	},
 	subgroup = "sarciculture-products",
 	order = "a-c-b[bone-meal]",
     auto_recycle = false,
@@ -589,7 +682,11 @@ data:extend
     type = "recipe",
     name = "bone-meal-sieving",
 	icon = "__apia__/graphics/icons/bone-meal-sieving.png",
-    category = "apicultural-or-hand-crafting",
+	categories =
+	{
+		"apicultural",
+		"crafting",
+	},
 	subgroup = "sarciculture-products",
 	order = "a-c-c[bone-meal]",
     auto_recycle = false,
@@ -598,9 +695,9 @@ data:extend
     ingredients = {{type = "item", name = "bone-meal", amount = 2}},
     results =
     {
-	  {type = "item", name = "bone-meal", amount = 1, probability = 0.5, ignored_by_productivity = 1},
-	  {type = "item", name = "iron-ore", amount = 1, probability = 0.3},
-	  {type = "item", name = "copper-ore", amount = 1, probability = 0.1},
+	  {type = "item", name = "bone-meal", amount = 1, independent_probability = 0.5, ignored_by_productivity = 1},
+	  {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.3},
+	  {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.1},
     },
     allow_productivity = true
   },
@@ -608,14 +705,16 @@ data:extend
     type = "recipe",
     name = "flesh-reproduction",
     icon = "__apia__/graphics/icons/flesh-reproduction.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-b-c[flesh]",
     surface_conditions = apia_utils.surface_conditions("carnova"),
     enabled = false,
     allow_productivity = true,
 	auto_recycle = false,
-	reset_freshness_on_craft = true,
     energy_required = 2,
     ingredients =
     {
@@ -633,7 +732,10 @@ data:extend
     type = "recipe",
     name = "flesh-separation",
     icon = "__apia__/graphics/icons/flesh-separation.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-b-b[flesh]",
     enabled = false,
@@ -656,7 +758,10 @@ data:extend
     type = "recipe",
     name = "nutrients-from-lipids",
     icon = "__apia__/graphics/icons/nutrients-from-lipids.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-n-a[nutrients]",
 	auto_recycle = false,
@@ -676,7 +781,10 @@ data:extend
     type = "recipe",
     name = "nutrients-from-proteins",
     icon = "__apia__/graphics/icons/nutrients-from-proteins.png",
-    category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-processes",
     order = "a-n-b[nutrients]",
 	auto_recycle = false,
@@ -696,7 +804,10 @@ data:extend
     type = "recipe",
     name = "solid-fuel-from-glycerine",
     icon = "__apia__/graphics/icons/solid-fuel-from-glycerine.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-f[solid-fuel]",
     enabled = false,
@@ -716,7 +827,10 @@ data:extend
   {
     type = "recipe",
     name = "glycerine",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-a[glycerine]",
     enabled = false,
@@ -737,7 +851,10 @@ data:extend
     type = "recipe",
     name = "biolubricant-from-glycerine",
 	icon = "__apia__/graphics/icons/lubricant-from-glycerine.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-b[biolubricant]",
     enabled = false,
@@ -757,7 +874,10 @@ data:extend
     type = "recipe",
     name = "explosives-from-nitroglycerine",
     icon = "__apia__/graphics/icons/explosives-from-nitroglycerine.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-e[solid-fuel]",
     enabled = false,
@@ -776,7 +896,10 @@ data:extend
     type = "recipe",
     name = "bioplastic-from-proteins",
     icon = "__apia__/graphics/icons/bioplastic-from-proteins.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-d[bioplastic]",
     enabled = false,
@@ -798,7 +921,10 @@ data:extend
     type = "recipe",
     name = "carbon-fiber-apia",
     icon = "__apia__/graphics/icons/carbon-fiber-apia.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "apiculture-products",
 	order = "b-e-a[carbon-fiber]",
 	surface_conditions = apia_utils.surface_conditions("apia"),
@@ -821,7 +947,10 @@ data:extend
     type = "recipe",
     name = "carbon-fiber-carnova",
     icon = "__apia__/graphics/icons/carbon-fiber-carnova.png",
-	category = "apicultural",
+	categories =
+	{
+		"apicultural",
+	},
     subgroup = "sarciculture-products",
 	order = "a-f-g[carbon-fiber]",
 	surface_conditions = apia_utils.surface_conditions("carnova"),
@@ -843,7 +972,10 @@ data:extend
     type = "recipe",
     name = "apicultural-science-pack",
     icon = "__apia__/graphics/icons/apicultural-science-pack.png",
-    category = "apicultural",
+    categories =
+	{
+		"apicultural",
+	},
 	subgroup = "science-pack",
     enabled = false,
 	auto_recycle = false,
@@ -867,3 +999,16 @@ data:extend
   },
 })
 
+
+
+
+if settings.startup["apia-flesh-reset-freshness-on-craft"].value then
+	local recipe = data.raw.recipe["flesh-reproduction"]
+    if recipe and recipe.results then
+        for _, result in pairs(recipe.results) do
+            if result.type == "item" then
+                result.reset_freshness_on_craft = true
+            end
+        end
+    end
+end

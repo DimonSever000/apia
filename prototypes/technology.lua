@@ -66,7 +66,10 @@ data:extend(
     research_trigger =
     {
       type = "mine-entity",
-      entity = "larvae"
+	  entities =
+	  {
+		"larvae"
+	  }
     }
   },
   {
@@ -120,7 +123,10 @@ data:extend(
     research_trigger =
     {
       type = "mine-entity",
-      entity = "wild-hive"
+	  entities =
+	  {
+		"wild-hive"
+	  }
     }
   },
   {
@@ -372,7 +378,10 @@ data:extend(
     research_trigger =
     {
       type = "mine-entity",
-      entity = "bone-nodes"
+	  entities =
+	  {
+		"bone-nodes"
+	  }
     }
   },
   {
@@ -395,7 +404,10 @@ data:extend(
     research_trigger =
     {
       type = "mine-entity",
-      entity = "lymph-brine"
+	  entities =
+	  {
+		"lymph-brine"
+	  }
     }
   },
   {
@@ -418,7 +430,10 @@ data:extend(
     research_trigger =
     {
       type = "mine-entity",
-      entity = "flesh-antenna"
+	  entities =
+	  {
+		"flesh-antenna"
+	  }
     }
   },
   {
@@ -509,22 +524,13 @@ data:extend(
     icon = "__apia__/graphics/technology/refreshment.png",
     icon_size = 128,
     effects = { },
-    prerequisites = {"apicultural-science-pack"},
-    unit =
+    prerequisites = {"lymph-processing"},
+	research_trigger =
     {
-      count = 500,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-		{"utility-science-pack", 1},
-        {"space-science-pack", 1},
-        {"agricultural-science-pack", 1},
-		{"apicultural-science-pack", 1},
-      },
-      time = 60
-    },
+      type = "craft-fluid",
+      fluid = "lymph",
+	  amount = 300,
+    }
   },
   {
     type = "technology",

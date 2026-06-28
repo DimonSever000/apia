@@ -59,7 +59,10 @@ function apia_utils.generate_refresh_recipe(item)
 	{
 		type = "recipe",
 		name = recipe_name,
-		category = "refresh",
+		categories =
+		{
+			"refresh",
+		},
 		subgroup = "refresh",
 		order = item.order,
 		hidden = false,
@@ -70,7 +73,6 @@ function apia_utils.generate_refresh_recipe(item)
 		allow_decomposition = false,
 		allow_quality = false,
 
-		reset_freshness_on_craft = true,
 		energy_required = 2,
 
 		localised_name = {"recipe-name.refresh-freshness", {"item-name." .. item.name}},
@@ -84,7 +86,7 @@ function apia_utils.generate_refresh_recipe(item)
 
 		results =
 		{
-		  {type = "item", name = item.name, amount = 1, ignored_by_productivity = 1},
+		  {type = "item", name = item.name, amount = 1, reset_freshness_on_craft = true, ignored_by_productivity = 1},
 		  {type = "fluid", name = "dirty-lymph", amount = lymph_output, ignored_by_stats = lymph_output, ignored_by_productivity = lymph_output},
 		}
 	}

@@ -97,11 +97,10 @@ local aspic_transitions =
   {
     to_tiles = lava_tile_type_names,
     transition_group = lava_transition_group_id,
-    spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone.png",
-    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
+    spritesheet = "__space-age__/graphics/terrain/lava-transitions/lava-stone.png",
+    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/lava-transitions/lava-stone-lightmap.png" },
      -- this added the lightmap spritesheet
     layout = tile_spritesheet_layout.transition_16_16_16_4_4,
-    lightmap_layout = { spritesheet = "__space-age__/graphics/terrain/water-transitions/lava-stone-lightmap.png" },
      -- this added the lightmap spritesheet
     effect_map_layout =
     {

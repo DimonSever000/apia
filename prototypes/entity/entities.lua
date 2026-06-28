@@ -45,7 +45,7 @@ data:extend(
     name = "artificial-hive",
     icon = "__apia__/graphics/icons/artificial-hive.png",
     subgroup = "agriculture",
-    flags = {"placeable-neutral", "placeable-player", "player-creation", "not-repairable", "not-deconstructable"},
+    flags = {"placeable-neutral", "placeable-player", "player-creation", "not-repairable", "not-deconstructable", "no-logistic-connection"},
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
     create_ghost_on_death = false,
@@ -129,7 +129,6 @@ data:extend(
     energy_usage = "500kW",
     module_slots = 0,
     allowed_effects = {},
-    enable_logistic_control_behavior = false
   },
   {
     type = "solar-panel",
@@ -213,7 +212,7 @@ data:extend(
 	drawing_box_vertical_extension = 0.4,
     icons_positioning =
     {
-      {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.95}, max_icons_per_row = 3}
+		{inventory_index = defines.inventory.crafter_modules, shift = {0, 0.95}, max_icons_per_row = 3}
     },
     icon_draw_specification = {scale = 2, shift = {0, -0.35}},
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
@@ -242,19 +241,7 @@ data:extend(
     },
     energy_usage = "1.2MW",
     heating_energy = "100kW",
-    crafting_categories = 
-	{
-		"apicultural", 
-		"apicultural-or-hand-crafting", 
-		"apicultural-or-assembling", 
-		"apicultural-or-chemistry", 
-		"apicultural-or-electronics-with-fluid",
-		"organic",
-		"organic-or-hand-crafting",
-		"organic-or-assembling",
-		"organic-or-chemistry",
-		"refresh"
-	},
+	crafting_categories = {"apicultural", "organic", "refresh"},
     fluid_boxes =
     {
       {

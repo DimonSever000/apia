@@ -50,11 +50,7 @@ royal_jelly_lake2.walking_sound = tile_sounds.walking.oil_deep
 royal_jelly_lake2.landing_steps_sound = tile_sounds.landing.oil
 royal_jelly_lake2.driving_sound = base_tile_sounds.driving.oil
 royal_jelly_lake2.lowland_fog = true
---midland-cracked-lichen
---midland-cracked-lichen-dull
---midland-yellow-crust
---midland-yellow-crust-3
---midland-yellow-crust-4
+
 
 local apia_biome1 = table.deepcopy(data.raw.tile["volcanic-smooth-stone"])
 apia_biome1.name = "apia-biome1"

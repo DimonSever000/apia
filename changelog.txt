@@ -1,11 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 28-06-2026
+  Major Features:
+    - Initial 2.1 update.
+  Graphics:
+    - Space planet backgrounds have been added.
+  Balancing:
+    - The larvae cultivation recipe now again requires nutrients instead of honey.
+    - The quality of larvae decreases by 1 during cultivation. This prevents the production of free legendary basic resources.
+    - The refreshment technology unlocks without requiring science packs.
+  Features:
+    - By default, flesh reproduction no longer restores flesh freshness. To refresh, the "refreshment" recipe must be used.
+    - Added a setting to restore the freshness recovery effect when crafting flesh reproduction.
+  Locale:
+    - Tooltip descriptions have been added for some settings.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
 Date: 13-06-2026
   Modding:
     - Some changes in data load order and file reorganization.
   Compatibility:
     - Added compatibility of the thruster fuel productivity technology with Muluna.
-	- Recipes are automatically added to the lubricant and carbon fiber productivity technology.
+    - Recipes are automatically added to the lubricant and carbon fiber productivity technology.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 12-06-2026

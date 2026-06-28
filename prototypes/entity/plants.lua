@@ -205,8 +205,8 @@ data:extend(
 		{
 		  {
 			filename = "__apia__/graphics/entity/honey-mushroom/honey-mushroom_00.png",
-			width = 256,
-			height = 256,
+			width = 160,
+			height = 160,
 			scale = 0.7,
 		  },
 		  {

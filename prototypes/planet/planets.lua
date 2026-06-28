@@ -154,7 +154,63 @@ PlanetsLib:extend
 			}
 		  }
 		},
-		ticks_between_player_effects = 2
+		ticks_between_player_effects = 2,
+		platform_surface_render_parameters =
+		{
+			platform_backdrop =
+			{
+			  emission_scales_with_shadow = false,
+			  radius = 680,
+			  rotation_seconds = data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.rotation_seconds / 0.6,
+			  light_radius = data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.light_radius * 0.75,
+			  cloudiness = 0.5,
+			  surface_vertical_offset = 0.1,
+			  cloud_vertical_offset = 0.05,
+			  specular_intensity = 1,
+			  atmosphere_color = {0.0706, 0.0667, 0.0588, 0.1},
+			  cloud_flow_intensity = 0.8,
+			  cloud_panning_rate = -0.01,
+			  planet_axis = {-37.0, 18.0},
+			  planet_axis_deviation_amplitude = {10.0, 10.0},
+			  planet_axis_deviation_seconds = {890.5/0.6, 753.7/0.6},
+			  position = {-680, 601},
+			  parallax_strength = {0.95, 0.95},
+			  light_direction = {-0.42, 0.23, 0.67},
+			  light_intensity_contrast = 0.3,
+			  light_radius = 13.9,
+			  planet_surface =
+			  {
+				filename = "__apia__/graphics/icons/space/apia-surface.png",
+				width = 1774,
+				height = 887
+			  },
+			  planet_normal = nil,
+			  planet_reflectivity =
+			  {
+				filename = "__apia__/graphics/icons/space/apia-reflectivity.png",
+				width = 1774,
+				height = 887
+			  },
+			  global_cloud =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud.png",
+				width = 2048,
+				height = 1024
+			  },
+			  global_cloud_normal =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud-normal.png",
+				width = 2048,
+				height = 1024
+			  },
+			  global_cloud_flow =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud-flow.png",
+				width = 2048,
+				height = 1024
+			  }
+			}
+		},
 	},
 	{
 		type = "planet",
@@ -307,7 +363,63 @@ PlanetsLib:extend
 			}
 		  }
 		},
-		ticks_between_player_effects = 1
+		ticks_between_player_effects = 1,
+		platform_surface_render_parameters =
+		{
+			platform_backdrop =
+			{
+			  emission_scales_with_shadow = false,
+			  radius = 680,
+			  rotation_seconds = data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.rotation_seconds / 0.6,
+			  light_radius = data.raw.planet["nauvis"].platform_surface_render_parameters.platform_backdrop.light_radius * 0.75,
+			  cloudiness = 0.3,
+			  surface_vertical_offset = 0.1,
+			  cloud_vertical_offset = 0.05,
+			  specular_intensity = 1,
+			  atmosphere_color = {0.07, 0.057, 0.075, 0.1},
+			  cloud_flow_intensity = 0.8,
+			  cloud_panning_rate = -0.01,
+			  planet_axis = {-37.0, 18.0},
+			  planet_axis_deviation_amplitude = {10.0, 10.0},
+			  planet_axis_deviation_seconds = {890.5/0.6, 753.7/0.6},
+			  position = {-680, 601},
+			  parallax_strength = {0.95, 0.95},
+			  light_direction = {-0.42, 0.23, 0.67},
+			  light_intensity_contrast = 0.3,
+			  light_radius = 13.9,
+			  planet_surface =
+			  {
+				filename = "__apia__/graphics/icons/space/carnova-surface.png",
+				width = 1774,
+				height = 887
+			  },
+			  planet_normal = nil,
+			  planet_reflectivity =
+			  {
+				filename = "__apia__/graphics/icons/space/carnova-reflectivity.png",
+				width = 1774,
+				height = 887
+			  },
+			  global_cloud =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud.png",
+				width = 2048,
+				height = 1024
+			  },
+			  global_cloud_normal =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud-normal.png",
+				width = 2048,
+				height = 1024
+			  },
+			  global_cloud_flow =
+			  {
+				filename = "__space-age__/graphics/space/gleba-cloud-flow.png",
+				width = 2048,
+				height = 1024
+			  }
+			}
+		},
 	},
 }
 
