@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 27-08-2026
+  Bugfixes:
+    - Reprocessing flamethrower fuel no longer yields phosphorus (auto_recycle = false).
+    - 2.1.xx version crash fixes.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 28-06-2026
   Major Features:
