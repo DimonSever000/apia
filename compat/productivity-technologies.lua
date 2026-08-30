@@ -26,12 +26,12 @@ else
                 effects = 
 				{
                     {
-                        type = "item",
+                        type = "fluid",
                         name = "thruster-fuel",
                         change = 0.1
                     },
                     {
-                        type = "item",
+                        type = "fluid",
                         name = "thruster-oxidizer",
                         change = 0.1
                     }

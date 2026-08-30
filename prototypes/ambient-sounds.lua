@@ -4,14 +4,14 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-1-hero",
 		track_type = "hero-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-1-hero.ogg", volume = 0.7,},
 	},
 	{
 		type = "ambient-sound",
 		name = "apia-1",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-1-hero.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -19,7 +19,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-2",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-2.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -27,7 +27,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-3",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-3.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -35,7 +35,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-4",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-4.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -43,7 +43,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-5",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-5.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -51,7 +51,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-6",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-6.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -59,7 +59,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-7",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-7.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -67,7 +67,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-8",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-8.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -75,7 +75,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-9",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-9.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -83,7 +83,7 @@ data:extend
 		type = "ambient-sound",
 		name = "apia-10",
 		track_type = "main-track",
-		planet = "apia",
+		planets = { "apia" },
 		sound = {filename = "__apia__/sound/ambient/apia/apia-10.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -94,14 +94,14 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-1-hero",
 		track_type = "hero-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-1-hero.ogg", volume = 0.7,},
 	},
 	{
 		type = "ambient-sound",
 		name = "carnova-1",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-1-hero.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -109,7 +109,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-2",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-2.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -117,7 +117,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-3",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-3.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -125,7 +125,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-4",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-4.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -133,7 +133,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-5",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-5.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -141,7 +141,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-6",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-6.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -149,7 +149,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-7",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-7.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -157,7 +157,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-8",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-8.ogg", volume = 0.7,},
 		weight = 10
 	},
@@ -165,7 +165,7 @@ data:extend
 		type = "ambient-sound",
 		name = "carnova-9",
 		track_type = "main-track",
-		planet = "carnova",
+		planets = { "carnova" },
 		sound = {filename = "__apia__/sound/ambient/carnova/carnova-9.ogg", volume = 0.7,},
 		weight = 10
 	},

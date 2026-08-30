@@ -14,3 +14,4 @@ Discord: https://discord.gg/7WAtZSaZz5
 - Acrid seas track by **JonJon**. Used with permission for this mod
 - Moonlight track by **Clavier-Music**. Free licence
 - Cosmos track by **The_Mountain**. Free licence
+- Polish language by **S3BA**. Used with permission for this mod

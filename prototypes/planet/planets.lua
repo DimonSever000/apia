@@ -67,8 +67,8 @@ PlanetsLib:extend
 		},
 		platform_procession_set =
 		{
-		  arrival = {"planet-to-platform-b"},
-		  departure = {"platform-to-planet-a"}
+		  arrival = {"planet-to-platform-b", "platform-to-platform-b"},
+		  departure = {"platform-to-planet-a", "platform-to-platform-a"}
 		},
 		planet_procession_set =
 		{
@@ -251,8 +251,8 @@ PlanetsLib:extend
 		},
 		platform_procession_set =
 		{
-		  arrival = {"planet-to-platform-b"},
-		  departure = {"platform-to-planet-a"}
+		  arrival = {"planet-to-platform-b", "platform-to-platform-b"},
+		  departure = {"platform-to-planet-a", "platform-to-platform-a"}
 		},
 		planet_procession_set =
 		{

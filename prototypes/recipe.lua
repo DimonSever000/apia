@@ -167,6 +167,7 @@ data:extend
 	{
 		"chemistry",
 	},
+	auto_recycle = false,
     enabled = false,
     energy_required = 6,
     ingredients =
