@@ -24,7 +24,10 @@ data:extend
 		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
 		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
 		drop_sound = space_age_item_sounds.agriculture_inventory_move,
-		fuel_category = "chemical",
+		fuel_categories =
+		{
+			"chemical",
+		},
 		fuel_value = "2MJ",
 		stack_size = 100,
 		spoil_ticks = 5 * minute,
@@ -99,7 +102,10 @@ data:extend
 		drop_sound = space_age_item_sounds.agriculture_inventory_move,
 		stack_size = 100,
 		default_import_location = "apia",
-		fuel_category = "chemical",
+		fuel_categories =
+		{
+			"chemical",
+		},
 		fuel_value = "2MJ",
 		weight = 1 * kg,
 	},
@@ -365,7 +371,10 @@ data:extend
 		spoil_ticks = 8 * minute,
 		spoil_result = "spoilage",
 		weight = 0.5 * kg,
-		fuel_category = "chemical",
+		fuel_categories =
+		{
+			"chemical",
+		},
 		fuel_value = "2MJ",
 	},
 	{
